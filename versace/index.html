@@ -1,0 +1,354 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VERSACE</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+	<script src="jquery-syaku.rolling.js"></script>
+	<style>
+		*{margin: 0; padding: 0; box-sizing: border-box;}
+		body{font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"; font-size: 14px;}
+		ul{list-style-type: none;}
+		a{text-decoration: none; color: #000000;}
+		
+		#header{width: 1900px; height: 170px; float: left; position: fixed; top: 0px; width: 100%; 
+			background-color: #FFFFFF; z-index: 999;}
+		#banner{width: 1900px; height: 800px; float: left; margin-top: 170px; 
+			position: relative; overflow: hidden;}
+		#contents{width: 1900px; height: 3600px; float: left;}
+		#footer{width: 1900px; height: 550px; float: left;}
+		
+		/* header */
+		#hea1{width: 1900px; height: 50px; padding-top: 15px; border-bottom: solid 2px #ccc;}
+		#hea_left{width: 631px; height: 50px; float: left;}
+		#hea_center{width: 633px; height: 50px; float: left; padding-left: 203px; padding-top: 5px;}
+		#hea_right{width: 632px; height: 50px; float: left;}
+		#hea2{width: 1900px; height: 60px; padding-top: 10px; text-align: center; 
+			font-family: "Lexend Deca Medium"; font-size: 40px; font-weight: bold; letter-spacing: 5px;}
+		#hea3{width: 1900px; height: 60px; border-bottom: solid 2px #ccc;}
+		
+		.left{padding-left: 100px;}
+		.right{padding-left: 350px;}
+		.left li{float: left; padding-right: 20px;}
+		.right li{float: left; padding-right: 20px;}
+		
+		.menu{padding-left: 400px; padding-top: 20px;}
+		.menu li{float: left; padding-right: 40px; font-family: 'Lexend Deca Light'; font-size: 15px;}
+		.menu li a{display: block; padding: 5px;}
+		.menu li a:hover{background-color: #000000; color: #FFFFFF;}
+		#gifts{color: #C88B25;}
+		
+		/* banner */
+		#srolling3{width:1900px; height:800px;position: absolute;left:0px; top:0px;}
+        #before{width:50px; height:50px;position: absolute;left:100px; top:375px;}
+        #next{width:50px; height:50px;position: absolute;left:1750px; top:375px;}
+        #srolling_bullet{width:32px; height:50px;position: absolute;left:934px; top:750px;}
+        #srolling_bullet li{float:left;}
+		
+		/* contents */
+		#con_top{width: 1900px; height: 200px; text-align: center; padding-top: 58.5px;}
+		#con_item{width: 1500px; height: 700px; margin-left: 250px;}
+		#con_magazine{width: 1200px; height: 700px; margin-left: 450px;}
+		#banner2{width: 1900px; height: 600px;}
+		#con_item2{width: 1500px; height: 700px; margin-left: 250px;}
+		#con_magazine2{width: 1200px; height: 700px; margin-left: 450px;}
+		
+		.holiday li{padding-bottom: 10px;}
+		
+		#item_top{width: 1500px; height: 70px; padding-left: 604px; padding-top: 26.5px;}
+		#item{width: 1500px; height: 630px;}
+		
+		.item li{float: left; text-align: center; padding-right: 13px; font-family: "Microsoft Yi Baiti"; font-size: 16px;}
+		.item li a:hover{color: #969696;}
+		
+		#mag1{width: 500px; height: 700px; padding-top: 50px; float: left;}
+		#mag2{width: 500px; height: 700px; float: left; padding-top: 450px;}
+		
+		#item2_top{width: 1500px; height: 100px; padding-left: 551.5px; padding-top: 56.5px;}
+		#item2{width: 1500px; height: 600px;}
+		
+		#mag2_1{width: 500px; height: 700px; float: left; 
+			padding-top: 439px; text-align: right;}
+		#mag2_2{width: 500px; height: 700px; padding-top: 50px; float: left; padding-left: 50px;}
+		
+		/* footer */
+		#foot1{width: 1900px; height: 200px; padding-left: 450px; background-color: #ccc;}
+		#foot2{width: 1900px; height: 250px; padding-left: 450px;}
+		#foot3{width: 1900px; height: 100px; padding-left: 450px;}
+		
+		#foot1_left{width: 500px; height: 200px; float: left;}
+		#foot1_right{width: 500px; height: 200px; float: left; padding-top: 84px;}
+		#enter{width: 450px; height: 100px; float: left; padding-top: 40px;}
+		#etwov{font-size: 22px;}
+		
+		#selec{width: 200px; height: 100px; float: left; padding-top: 20px;}
+		#email{width: 250px; height: 100px; float: left; padding-top: 20px;}
+		
+		#submit{width: 50px;}
+		
+		.icon{width: 500px; height: 31px; float: left; padding-left: 100px;}
+		.icon li{float: left; padding-left: 45px;}
+		
+		#foot2_1{width: 250px; height: 250px; float: left;}
+		#foot2_2{width: 250px; height: 250px; float: left;}
+		#foot2_3{width: 250px; height: 250px; float: left;}
+		#foot2_4{width: 250px; height: 250px; float: left;}
+		
+		.company{padding-top: 30px;}
+		.company li{font-size: 14px; padding-top: 10px;}
+		.com_title{font-weight: bold;}
+		
+		#foot3_1{width: 1000px; height: 98px; text-align: center; padding-top: 25px; 
+			border-top: solid 2px #ccc;}
+	</style>
+	<script type="text/javascript">
+		 jQuery(function() {
+      
+
+    var data2 = [
+      "<img src='./images/banner1.jpg' width='1900' height='800'>",
+      "<img src='./images/banner1-1.jpg' width='1900' height='800'>",
+      /*"<img src='./images/banner3.jpg' width='1900' height='800'>",
+      "<img src='./images/demo4.jpg' width='620' height='280'>",
+	  "<img src='./images/demo4.jpg' width='620' height='280'>"  이미지를 넣을수 있는 부*/
+        
+    ];
+    
+
+    // 좌우 블릿 자동 스크롤 예제
+    jQuery("#srolling3").srolling({
+      data : data2,
+      auto : true,
+      width :1900,
+      height : 800,
+      delay_frame : 700,
+      move : 'left',
+      prev : '#before',
+      next : '#next',
+      is_bullet : true,
+      bullet_style_func : function(bullet,get_bullet) {
+        // bullet = $('#srolling_bullet_item') 리턴받음
+        // get_bullet = $('선택된 class 블릿') 리턴받음
+
+        // 모든 버튼 블릿 초기화
+        jQuery('li',bullet).each(function() {
+          var img = jQuery('img',this);
+          var src = img.attr('src');
+          src = src.replace('on','off');
+          img.attr('src',src);
+        });
+
+        // 선택된 블릿 효과 주기
+        var img = jQuery('img',get_bullet);
+        var src = img.attr('src');
+        src = src.replace('off','on');
+        img.attr('src',src);
+
+      }
+    });
+
+  });
+	</script>
+</head>
+
+<body>
+	
+	<div id="header">
+		<div id="hea1">
+			<div id="hea_left">
+				<ul class="left">
+					<li><a href="#"><img src="images/stores.jpg" alt="store"></a></li>
+					<li><a href="#"><img src="images/contact us.jpg" alt="contact"></a></li>
+				</ul>
+			</div>
+			<div id="hea_center">
+				<a href="#"><img src="images/sign up.jpg" alt="signup"></a>
+			</div>
+			<div id="hea_right">
+				<ul class="right">
+					<li><a href="#"><img src="images/sign in.jpg" alt="signin"></a></li>
+					<li><a href="#"><img src="images/register.jpg" alt="register"></a></li>
+					<li><a href="#"><img src="images/like.png" alt="like"></a></li>
+					<li><a href="#"><img src="images/bag.png" alt="bag"></a></li>
+				</ul>
+			</div>
+		</div><!-- hea1 -->
+		<div id="hea2">
+			<a href="index.html">VERSACE</a>
+		</div><!-- hea2 -->
+		<div id="hea3">
+			<ul class="menu">
+				<li><a href="main.html">MEN</a></li>
+				<li><a href="#">WOMEN</a></li>
+				<li><a href="#">CHILDREN</a></li>
+				<li><a href="#">HOME COLLECTION</a></li>
+				<li><a href="#">JEANS COUTURE</a></li>
+				<li><a href="#">ATELIER VERSACE</a></li>
+				<li><a href="#">WORLD OF VERSACE</a></li>
+				<li><a href="#"><span id="gifts">GIFTS</span></a></li>
+			</ul>
+		</div><!-- hea3 -->
+	</div><!-- header -->
+	
+	<div id="banner">
+		<div id="srolling3"></div>
+		<div id="before"><img src="images/before.png" alt="before"></div>
+		<div id="next"><img src="images/next.png" alt="next"></div>
+		
+		<ul id="srolling_bullet" class="bullet">
+			<li id="srolling_bullet_item"><img src="images/bullet_off.png"></li>
+		</ul>
+	</div><!-- banner -->
+	
+	<div id="contents">
+		<div id="con_top">
+			<ul class="holiday">
+				<li><img src="images/holiday.jpg" alt="holiday"></li>
+				<li><img src="images/holiday_mid.jpg" alt="holiday_mid"></li>
+				<li><a href="#"><img src="images/gift_guide.jpg" alt="gift_guide"></a>
+					<a href="#"><img src="images/holiday_campaign.jpg" alt="campaign"></a></li>
+			</ul>
+		</div><!-- con_top -->
+		<div id="con_item">
+			<div id="item_top"><img src="images/foru.jpg" alt="foryou"></div>
+			<div id="item">
+				<ul class="item">
+					<li><a href="#"><img src="images/con1.jpg" alt="1"><br><br>
+				  MEDUSA AMPLIFIED PRINT JACKET<br><br>1,690,000 Won</a></li>
+					<li><a href="#"><img src="images/con2.jpg" alt="2"><br><br>
+				  TRESOR DE LA MER PRINT JACKET<br><br>2,030,000 Won</a></li>
+					<li><a href="#"><img src="images/con3.jpg" alt="3"><br><br>
+				  MEDUSA RENAISSANCE PRINT PUFFER JACKET<br><br>3,140,000 Won</a></li>
+					<li><a href="#"><img src="images/con4.jpg" alt="4"><br><br>
+				  LA GRECA FAUX FUR COAT<br><br>4,420,000 Won</a></li>
+				</ul>
+			</div>
+		</div><!-- con_item -->
+		<div id="con_magazine">
+			<div id="mag1">
+				<img src="images/magazine.jpg" alt="magazine">
+			</div>
+			<div id="mag2">
+				<img src="images/kithxversace.jpg" alt="collabo"><br><br>
+				<a href="#"><img src="images/shopkith.jpg" alt="shop"></a>
+			</div>
+		</div>
+		<!-- con_magazine -->
+		
+		<div id="banner2">
+			<img src="images/banner2.jpg" alt="banner2">
+		</div><!-- banner2 -->
+		
+		<div id="con_item2">
+			<div id="item2_top"><img src="images/foruhome.jpg" alt="foruhome"></div>
+			<div id="item2">
+				<ul class="item">
+					<li><a href="#"><img src="images/con5.jpg" alt="5"><br><br>
+				  VIRTUS GALA ESPRESSO CUP & SAUCER<br><br>374,000 Won</a></li>
+					<li><a href="#"><img src="images/con6.jpg" alt="6"><br><br>
+				  BAROCCO MOSAIC ESPRESSO CUP & SAUCER<br><br>374,000 Won</a></li>
+					<li><a href="#"><img src="images/con7.jpg" alt="7"><br><br>
+				  VIRTUS ALPHABET A PLATE 17 CM<br><br>145,000 Won</a></li>
+					<li><a href="#"><img src="images/con8.jpg" alt="8"><br><br>
+				  VIRTUS GALA DISH 12 CM<br><br>81,900 Won</a></li>
+				</ul>
+			</div>
+		</div><!-- con_item2 -->
+		<div id="con_magazine2">
+			<div id="mag2_1">
+				<img src="images/time.jpg" alt="time"><br><br>
+				<a href="#"><img src="images/shoptime.jpg" alt="shoptime"></a>
+			</div>
+			<div id="mag2_2">
+				<img src="images/magazine2.jpg" alt="magazine2">
+			</div>
+		</div><!-- con_magazine2 -->
+	</div><!-- contents -->
+	
+	<div id="footer">
+	  <div id="foot1">
+			<div id="foot1_left">
+			  <div id="enter">
+					<span id="etwov">ENTER THE WORLD OF VERSACE</span><br><br>
+				  Hear about exclusive events, collections and news.
+			  </div>
+			  <div id="selec">
+			  		<table width="200">
+				  	<tr>
+				    <td><label>
+				      <input type="radio" name="RadioGroup1" value="versace" id="RadioGroup1_0">
+				      Versace</label></td>
+			    	</tr>
+				  	<tr>
+				    <td><label>
+				      <input type="radio" name="RadioGroup1" value="versace jeans" id="RadioGroup1_1">
+				      Versace Jeans Couture</label></td>
+			    	</tr>
+			  		</table>
+				</div>
+				<div id="email">
+				  <label for="textfield">Enter your email</label><br>
+                  <input name="textfield" type="text" id="textfield" size="20">
+                  <input name="submit" type="submit" id="submit" value="Submit">	
+				</div>
+            </div>
+		<div id="foot1_right">
+				<ul class="icon">
+					<li><a href="#"><img src="images/Asset 1.png" alt="kakao"></a></li>
+					<li><a href="#"><img src="images/Asset 2.png" alt="facebook"></a></li>
+					<li><a href="#"><img src="images/Asset 3.png" alt="instagram"></a></li>
+					<li><a href="#"><img src="images/Asset 4.png" alt="youtube"></a></li>
+					<li><a href="#"><img src="images/Asset 5.png" alt="in"></a></li>
+				</ul>
+			</div>
+		</div><!-- foot1 -->
+		<div id="foot2">
+			<div id="foot2_1">
+				<ul class="company">
+					<li><span class="com_title">STORE LOCATOR</span></li>
+					<li><a href="#">Find a Boutique</a></li>
+					<li><a href="#">Book an Appointment</a></li>
+					<li><a href="#">Versace Watches Stores</a></li>
+				</ul>
+			</div>
+			<div id="foot2_2">
+				<ul class="company">
+					<li><span class="com_title">CUSTOMER CARE</span></li>
+					<li><a href="#">Exclusive Services</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Help / FAQs</a></li>
+					<li><a href="#">Orders & Shipping</a></li>
+					<li><a href="#">Returns & Refunds</a></li>
+					<li><a href="#">Authenticity</a></li>
+				</ul>
+			</div>
+			<div id="foot2_3">
+				<ul class="company">
+					<li><span class="com_title">ABOUT US</span></li>
+					<li><a href="#">Company Profile</a></li>
+					<li><a href="#">Corporate Data</a></li>
+					<li><a href="#">Investor Relations</a></li>
+					<li><a href="#">Careers</a></li>
+				</ul>
+			</div>
+			<div id="foot2_4">
+				<ul class="company">
+					<li><span class="com_title">LEGAL</span></li>
+					<li><a href="#">Legal Notes</a></li>
+					<li><a href="#">Terms & Conditions</a></li>
+					<li><a href="#">General Conditions of Purchase</a></li>
+					<li><a href="#">Code of Business Conduct and Ethics</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Cookie Policy</a></li>
+				</ul>
+			</div>
+		</div><!-- foot2 -->
+		<div id="foot3">
+			<div id="foot3_1">
+				<img src="images/bottom_logo.png" alt="bottomlogo">
+			</div>
+		</div><!-- foot3 -->
+	</div><!-- footer -->
+	
+</body>
+</html>

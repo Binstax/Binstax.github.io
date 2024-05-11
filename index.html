@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.web_1').css("color", "#000");
+            $('#portfolio').show();
+            $('#asics').hide();
+            $('#versace').hide();
+
+            $('.web_2').click(function() {
+                $('.web_1').css("color", "#ccc");
+                $('.web_2').css("color", "#000");
+                $('.web_3').css("color", "#ccc");
+                $('#portfolio').hide();
+                $('#asics').show();
+                $('#versace').hide();
+                return false;
+            });
+
+            $('.web_3').click(function() {
+                $('.web_1').css("color", "#ccc");
+                $('.web_2').css("color", "#ccc");
+                $('.web_3').css("color", "#000");
+                $('#portfolio').hide();
+                $('#asics').hide();
+                $('#versace').show();
+                return false;
+            });
+
+            $('.web_1').click(function() {
+                $('.web_1').css("color", "#000");
+                $('.web_2').css("color", "#ccc");
+                $('.web_3').css("color", "#ccc");
+                $('#portfolio').show();
+                $('#asics').hide();
+                $('#versace').hide();
+                return false;
+            });
+        });
+
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 0) {
+                $('#header').addClass('scrolled');
+            } else {
+                $('#header').removeClass('scrolled');
+            }
+        });
+
+        $(function() {
+            $('li > a').click(function() {
+                $('html, body').animate({
+                    scrollTop: $(this.hash).offset.top
+                }, 300);
+            });
+        });
+
+        $(function() {
+            $(".graphic_item").slice(0, 2).show();
+            $("#more").click(function(e) {
+                e.preventDefault();
+                $(".graphic_item:hidden").slice(0, 2).show();
+                if ($(".graphic_item:hidden").length == 0) {
+                    $("#more").hide();
+                }
+            });
+        });
+
+        $(function() {
+            $(".graphic_photo").click(function() {
+                $('body').css("overflow", "hidden");
+                $(".modal").show(function() {
+                    $(".modal").scrollTop;
+                });
+                var imgSrc = $(this).children("img").attr("src");
+                $(".modalbox img").attr("src", imgSrc);
+            });
+            $(".modal button").click(function() {
+                $(".modal").hide();
+                $('body').css("overflow-y", "scroll");
+            });
+            $(".modal").click(function(e) {
+                if (e.target.className != "modal") {
+                    return false;
+                } else {
+                    $(".modal").hide();
+                    $('body').css("overflow-y", "scroll");
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="header">
+        <ul class="menu">
+            <li><a href="#banner">HOME</a></li>
+            <li><a href="#profile">PROFILE</a></li>
+            <li><a href="#web">WEB</a></li>
+            <li><a href="#graphic">GRAPHIC</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </div>
+
+    <div id="banner">
+        <img src="images/img2.jpg">
+    </div>
+
+    <div id="profile">
+        <div class="empty"></div>
+        <img src="images/profile.jpg">
+    </div>
+
+    <div id="web">
+        <div class="empty"></div>
+        <img class="text" src="images/web_text.jpg">
+        <div id="web_full">
+            <ul class="web_menu">
+                <li class="web_1">PORTFOLIO</li>
+                <li class="web_2">ASICS</li>
+                <li class="web_3">VERSACE</li>
+            </ul>
+        </div>
+
+        <div id="web_contents">
+            <div id="portfolio">
+                <div class="overview">
+                    <img src="images/overview1.jpg">
+                    <a href="index.html" target="_blank"><img src="images/click.jpg" onmouseover="this.src='images/click_2.jpg'" onmouseout="this.src='images/click.jpg'"></a>
+                </div>
+                <img class="contents" src="images/web_portfolio.png">
+            </div>
+            <div id="asics">
+                <div class="overview">
+                    <img src="images/overview2.jpg">
+                    <a href="asics/index.html" target="_blank"><img src="images/click.jpg" onmouseover="this.src='images/click_2.jpg'" onmouseout="this.src='images/click.jpg'"></a>
+                </div>
+                <img class="contents" src="images/web_asics.png">
+            </div>
+            <div id="versace">
+                <div class="overview">
+                    <img src="images/overview3.jpg">
+                    <a href="versace/index.html" target="_blank"><img src="images/click.jpg" onmouseover="this.src='images/click_2.jpg'" onmouseout="this.src='images/click.jpg'"></a>
+                </div>
+                <img class="contents" src="images/web_versace.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="graphic">
+        <div class="empty"></div>
+        <img src="images/graphic_text.jpg">
+        <div class="graphic_contents">
+            <div class="graphic_item">
+                <div class="graphic_photo"><img src="images/graphic/nosplan.jpg" onmouseover="this.src='images/graphic/nosplan_h.jpg'" onmouseout="this.src='images/graphic/nosplan.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/bodylike.jpg" onmouseover="this.src='images/graphic/bodylike_h.jpg'" onmouseout="this.src='images/graphic/bodylike.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/jih.jpg" onmouseover="this.src='images/graphic/jih_h.jpg'" onmouseout="this.src='images/graphic/jih.jpg'"></div>
+            </div>
+            <div class="graphic_item">
+                <div class="graphic_photo"><img src="images/graphic/ydc.jpg" onmouseover="this.src='images/graphic/ydc_h.jpg'" onmouseout="this.src='images/graphic/ydc.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/poster_1.jpg" onmouseover="this.src='images/graphic/poster_1_h.jpg'" onmouseout="this.src='images/graphic/poster_1.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/poster_2.jpg" onmouseover="this.src='images/graphic/poster_2_h.jpg'" onmouseout="this.src='images/graphic/poster_2.jpg'"></div>
+            </div>
+            <div class="graphic_item">
+                <div class="graphic_photo"><img src="images/graphic/pmang.jpg" onmouseover="this.src='images/graphic/pmang_h.jpg'" onmouseout="this.src='images/graphic/pmang.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/konjiam.jpg" onmouseover="this.src='images/graphic/konjiam_h.jpg'" onmouseout="this.src='images/graphic/konjiam.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/uiux.jpg" onmouseover="this.src='images/graphic/uiux_h.jpg'" onmouseout="this.src='images/graphic/uiux.jpg'"></div>
+            </div>
+            <div class="graphic_item">
+                <div class="graphic_photo"><img src="images/graphic/banner_1.jpg" onmouseover="this.src='images/graphic/banner_1_h.jpg'" onmouseout="this.src='images/graphic/banner_1.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/banner_2.jpg" onmouseover="this.src='images/graphic/banner_2_h.jpg'" onmouseout="this.src='images/graphic/banner_2.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/banner_3.jpg" onmouseover="this.src='images/graphic/banner_3_h.jpg'" onmouseout="this.src='images/graphic/banner_3.jpg'"></div>
+            </div>
+            <div class="graphic_item">
+                <div class="graphic_photo"><img src="images/graphic/banner_4.jpg" onmouseover="this.src='images/graphic/banner_4_h.jpg'" onmouseout="this.src='images/graphic/banner_4.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/screenshot.jpg" onmouseover="this.src='images/graphic/screenshot_h.jpg'" onmouseout="this.src='images/graphic/screenshot.jpg'"></div>
+                <div class="graphic_photo"><img src="images/graphic/banner_5.jpg" onmouseover="this.src='images/graphic/banner_5_h.jpg'" onmouseout="this.src='images/graphic/banner_5.jpg'"></div>
+            </div>
+        </div>
+        <div class="more_box">
+            <img id="more" src="images/graphic/more.jpg" onmouseover="this.src='images/graphic/more_2.jpg'" onmouseout="this.src='images/graphic/more.jpg'">
+        </div>
+    </div>
+    <div class="modal">
+        <button>&times;</button>
+        <div class="modalbox">
+            <img src="">
+        </div>
+    </div>
+
+    <div class="empty"></div>
+    <img id="contact" src="images/contact.jpg">
+
+    <div id="footer">
+        ©2024 STAX. All rights Reserved.
+    </div>
+
+</body>
+
+</html>

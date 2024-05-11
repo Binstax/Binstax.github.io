@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VERSACE</title>
+	<style>
+		*{margin: 0; padding: 0; box-sizing: border-box;}
+		body{font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"; font-size: 12px;}
+		ul{list-style-type: none;}
+		a{text-decoration: none; color: #000000;}
+		
+		#header{width: 1900px; height: 170px; float: left; position: fixed; top: 0px; width: 100%; 
+			background-color: #FFFFFF; z-index: 999;}
+		#banner{width: 1900px; height: 500px; float: left; margin-top: 170px;}
+		#contents{width: 1900px; height: 3500px; float: left;}
+		#footer{width: 1900px; height: 550px; float: left;}
+		
+		/* header */
+		#hea1{width: 1900px; height: 50px; padding-top: 15px; border-bottom: solid 2px #ccc;}
+		#hea_left{width: 631px; height: 50px; float: left;}
+		#hea_center{width: 633px; height: 50px; float: left; padding-left: 203px; padding-top: 5px;}
+		#hea_right{width: 632px; height: 50px; float: left;}
+		#hea2{width: 1900px; height: 60px; padding-top: 10px; text-align: center; 
+			font-family: "Lexend Deca Medium"; font-size: 40px; font-weight: bold; letter-spacing: 5px;}
+		#hea3{width: 1900px; height: 60px; border-bottom: solid 2px #ccc;}
+		
+		.left{padding-left: 100px;}
+		.right{padding-left: 350px;}
+		.left li{float: left; padding-right: 20px;}
+		.right li{float: left; padding-right: 20px;}
+		
+		.menu{padding-left: 400px; padding-top: 20px;}
+		.menu li{float: left; padding-right: 40px; font-family: 'Lexend Deca Light'; font-size: 15px;}
+		.menu li a{display: block; padding: 5px;}
+		.menu li a:hover{background-color: #000000; color: #FFFFFF;}
+		#gifts{color: #C88B25;}
+		
+		/* banner */
+		#banner1{width: 1900px; height: 100px; text-align: center; font-size: 26px; padding-top: 50px;}
+		#banner2{width: 1900px; height: 400px;}
+		
+		/* contents */
+		#clothing{width: 1900px; height: 150px; text-align: center; float: left; padding-top: 60px;}
+		#clo1{width: 1500px; height: 600px; margin-left: 250px; float: left;}
+		#clo2{width: 1500px; height: 600px; margin-left: 250px; float: left;}
+		#dis1{width: 1900px; height: 200px; float: left; padding-left: 850px; padding-top: 50px;}
+		#small_banner{width: 1900px; height: 400px; float: left;}
+		#watch{width: 1900px; height: 150px; text-align: center; float: left; padding-top: 60px;}
+		#wat1{width: 1500px; height: 600px; margin-left: 250px; float: left;}
+		#wat2{width: 1500px; height: 600px; margin-left: 250px; float: left;}
+		#dis2{width: 1900px; height: 200px; float: left; padding-left: 850px; padding-top: 50px;}
+		
+		.title{font-size: 26px;}
+		.text{font-size: 16px;}
+		.cloth li{float: left; text-align: center; padding-right: 13px; font-family: "Microsoft Yi Baiti"; font-size: 16px;}
+		.cloth li a:hover{color: #969696;}
+		#dis_box1{width: 200px; height: 50px; text-align: center; border: solid 1px #000000; 
+			font-family: "Gadugi"; font-size: 20px; padding-top: 10px;}
+		#dis_box2{width: 200px; height: 50px; text-align: center; border: solid 1px #000000; 
+			font-family: "Gadugi"; font-size: 20px; padding-top: 10px;}
+		
+		/* footer */
+		#foot1{width: 1900px; height: 200px; padding-left: 450px; background-color: #ccc;}
+		#foot2{width: 1900px; height: 250px; padding-left: 450px;}
+		#foot3{width: 1900px; height: 100px; padding-left: 450px;}
+		
+		#foot1_left{width: 500px; height: 200px; float: left;}
+		#foot1_right{width: 500px; height: 200px; float: left; padding-top: 84px;}
+		#enter{width: 450px; height: 100px; float: left; padding-top: 40px;}
+		#etwov{font-size: 22px;}
+		
+		#selec{width: 200px; height: 100px; float: left; padding-top: 20px;}
+		#email{width: 250px; height: 100px; float: left; padding-top: 20px;}
+		
+		#submit{width: 50px;}
+		
+		.icon{width: 500px; height: 31px; float: left; padding-left: 100px;}
+		.icon li{float: left; padding-left: 45px;}
+		
+		#foot2_1{width: 250px; height: 250px; float: left;}
+		#foot2_2{width: 250px; height: 250px; float: left;}
+		#foot2_3{width: 250px; height: 250px; float: left;}
+		#foot2_4{width: 250px; height: 250px; float: left;}
+		
+		.company{padding-top: 30px;}
+		.company li{font-size: 14px; padding-top: 10px;}
+		.com_title{font-weight: bold;}
+		
+		#foot3_1{width: 1000px; height: 98px; text-align: center; padding-top: 25px; 
+			border-top: solid 2px #ccc;}
+	</style>
+</head>
+
+<body>
+	
+	<div id="header">
+		<div id="hea1">
+			<div id="hea_left">
+				<ul class="left">
+					<li><a href="#"><img src="images/stores.jpg" alt="store"></a></li>
+					<li><a href="#"><img src="images/contact us.jpg" alt="contact"></a></li>
+				</ul>
+			</div>
+			<div id="hea_center">
+				<a href="#"><img src="images/sign up.jpg" alt="signup"></a>
+			</div>
+			<div id="hea_right">
+				<ul class="right">
+					<li><a href="#"><img src="images/sign in.jpg" alt="signin"></a></li>
+					<li><a href="#"><img src="images/register.jpg" alt="register"></a></li>
+					<li><a href="#"><img src="images/like.png" alt="like"></a></li>
+					<li><a href="#"><img src="images/bag.png" alt="bag"></a></li>
+				</ul>
+			</div>
+		</div><!-- hea1 -->
+		<div id="hea2">
+			<a href="index.html">VERSACE</a>
+		</div><!-- hea2 -->
+		<div id="hea3">
+			<ul class="menu">
+				<li><a href="main.html">MEN</a></li>
+				<li><a href="#">WOMEN</a></li>
+				<li><a href="#">CHILDREN</a></li>
+				<li><a href="#">HOME COLLECTION</a></li>
+				<li><a href="#">JEANS COUTURE</a></li>
+				<li><a href="#">ATELIER VERSACE</a></li>
+				<li><a href="#">WORLD OF VERSACE</a></li>
+				<li><a href="#"><span id="gifts">GIFTS</span></a></li>
+			</ul>
+		</div><!-- hea3 -->
+	</div><!-- header -->
+	
+	<div id="banner">
+		<div id="banner1">MEN'S COLLECTION</div>
+		<div id="banner2"><img src="images/main_banner.jpg" alt="mainbanner"></div>
+	</div><!-- banner -->
+	
+	<div id="contents">
+		<div id="clothing">
+			<span class="title">CLOTHING</span><br><br>
+			<span class="text">A fashionable selection of menswear</span>
+		</div>
+		<div id="clo1">
+			<ul class="cloth">
+				<li><a href="#"><img src="images/main_con1.jpg" alt="main_con1"><br><br>
+					LA GRECA PRINT GABARDINE SHIRT<br><br>1,250,000 Won</a></li>
+				<li><a href="#"><img src="images/main_con2.jpg" alt="main_con2"><br><br>
+					LA GRECA ACCENT PUFFER JACKET<br><br>2,880,000 Won</a></li>
+				<li><a href="#"><img src="images/main_con3.jpg" alt="main_con3"><br><br>
+					LA GRECA PRINT HOODED JACKET<br><br>2,880,000 Won</a></li>
+				<li><a href="#"><img src="images/main_con4.jpg" alt="main_con4"><br><br>
+					MEDUSA TAG JACKET<br><br>3,390,000 Won</a></li>
+			</ul>
+		</div>
+		<div id="clo2">
+			<ul class="cloth">
+				<li><a href="#"><img src="images/main_con5.jpg" alt="main_con5"><br><br>
+					LA GRECA INTARSIA WOOL SWEATER<br><br>1,520,000 Won</a></li>
+				<li><a href="#"><img src="images/main_con6.jpg" alt="main_con6"><br><br>
+					LA GRECA BRUSHED WOOL JACQUARD SWEATER<br><br>1,350,000 Won</a></li>
+				<li><a href="#"><img src="images/main_con7.jpg" alt="main_con7"><br><br>
+					LOGO SWEATSHIRT<br><br>1,110,000 Won</a></li>
+				<li><a href="#"><img src="images/main_con8.jpg" alt="main_con8"><br><br>
+					LA GRECA EMBROIDERED SWEARSHIRT<br><br>1,350,000 Won</a></li>
+			</ul>
+		</div>
+		<div id="dis1">
+			<a href="#"><div id="dis_box1">Discover More</div></a>
+		</div>
+		<div id="small_banner">
+			<img src="images/main_banner2.jpg" alt="main_banner2">
+		</div>
+		<div id="watch">
+			<span class="title">WATCHS</span><br><br>
+			<span class="text">The ultimate accessory for fashionable looks</span>
+		</div>
+		<div id="wat1">
+			<ul class="cloth">
+				<li><a href="#"><img src="images/main_wat1.jpg" alt="main_wat1"><br><br>
+					GRECA LOGO CHRONO WATCH<br><br>1,860,000 Won</a></li>
+				<li><a href="#"><img src="images/main_wat2.jpg" alt="main_wat2"><br><br>
+					V- ESSENTIAL WATCH<br><br>840,000 Won</a></li>
+				<li><a href="#"><img src="images/main_wat3.jpg" alt="main_wat3"><br><br>
+					LA GRECA WATCH<br><br>1,720,000 Won</a></li>
+				<li><a href="#"><img src="images/main_wat4.jpg" alt="main_wat4"><br><br>
+					VERSACE ESSENTIAL WATCH<br><br>840,000 Won</a></li>
+			</ul>
+		</div>
+		<div id="wat2">
+			<ul class="cloth">
+				<li><a href="#"><img src="images/main_wat5.jpg" alt="main_wat5"><br><br>
+					ICON ACTIVE WATCH<br><br>1,080,000 Won</a></li>
+				<li><a href="#"><img src="images/main_wat6.jpg" alt="main_wat6"><br><br>
+					VERSACE GEO CHRONO WATCH<br><br>1,400,000 Won</a></li>
+				<li><a href="#"><img src="images/main_wat7.jpg" alt="main_wat7"><br><br>
+					VERSACE GEO AUTO WATCH<br><br>1,860,000 Won</a></li>
+				<li><a href="#"><img src="images/main_wat8.jpg" alt="main_wat8"><br><br>
+					GRECA CHRONO WATCH<br><br>1,340,000 Won</a></li>
+			</ul>
+		</div>
+		<div id="dis2">
+			<a href="#"><div id="dis_box2">Discover More</div></a>
+		</div>
+	</div><!-- contents -->
+	
+	<div id="footer">
+	  <div id="foot1">
+			<div id="foot1_left">
+			  <div id="enter">
+					<span id="etwov">ENTER THE WORLD OF VERSACE</span><br><br>
+				  Hear about exclusive events, collections and news.
+			  </div>
+			  <div id="selec">
+			  		<table width="200">
+				  	<tr>
+				    <td><label>
+				      <input type="radio" name="RadioGroup1" value="versace" id="RadioGroup1_0">
+				      Versace</label></td>
+			    	</tr>
+				  	<tr>
+				    <td><label>
+				      <input type="radio" name="RadioGroup1" value="versace jeans" id="RadioGroup1_1">
+				      Versace Jeans Couture</label></td>
+			    	</tr>
+			  		</table>
+				</div>
+				<div id="email">
+				  <label for="textfield">Enter your email</label><br>
+                  <input name="textfield" type="text" id="textfield" size="20">
+                  <input name="submit" type="submit" id="submit" value="Submit">	
+				</div>
+            </div>
+		<div id="foot1_right">
+				<ul class="icon">
+					<li><a href="#"><img src="images/Asset 1.png" alt="kakao"></a></li>
+					<li><a href="#"><img src="images/Asset 2.png" alt="facebook"></a></li>
+					<li><a href="#"><img src="images/Asset 3.png" alt="instagram"></a></li>
+					<li><a href="#"><img src="images/Asset 4.png" alt="youtube"></a></li>
+					<li><a href="#"><img src="images/Asset 5.png" alt="in"></a></li>
+				</ul>
+			</div>
+		</div><!-- foot1 -->
+		<div id="foot2">
+			<div id="foot2_1">
+				<ul class="company">
+					<li><span class="com_title">STORE LOCATOR</span></li>
+					<li><a href="#">Find a Boutique</a></li>
+					<li><a href="#">Book an Appointment</a></li>
+					<li><a href="#">Versace Watches Stores</a></li>
+				</ul>
+			</div>
+			<div id="foot2_2">
+				<ul class="company">
+					<li><span class="com_title">CUSTOMER CARE</span></li>
+					<li><a href="#">Exclusive Services</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Help / FAQs</a></li>
+					<li><a href="#">Orders & Shipping</a></li>
+					<li><a href="#">Returns & Refunds</a></li>
+					<li><a href="#">Authenticity</a></li>
+				</ul>
+			</div>
+			<div id="foot2_3">
+				<ul class="company">
+					<li><span class="com_title">ABOUT US</span></li>
+					<li><a href="#">Company Profile</a></li>
+					<li><a href="#">Corporate Data</a></li>
+					<li><a href="#">Investor Relations</a></li>
+					<li><a href="#">Careers</a></li>
+				</ul>
+			</div>
+			<div id="foot2_4">
+				<ul class="company">
+					<li><span class="com_title">LEGAL</span></li>
+					<li><a href="#">Legal Notes</a></li>
+					<li><a href="#">Terms & Conditions</a></li>
+					<li><a href="#">General Conditions of Purchase</a></li>
+					<li><a href="#">Code of Business Conduct and Ethics</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Cookie Policy</a></li>
+				</ul>
+			</div>
+		</div><!-- foot2 -->
+		<div id="foot3">
+			<div id="foot3_1">
+				<img src="images/bottom_logo.png" alt="bottomlogo">
+			</div>
+		</div><!-- foot3 -->
+	</div><!-- footer -->
+	
+</body>
+</html>

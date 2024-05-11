@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>asics</title>
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/ddca0a692c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <script>
+        $(document).ready(function() {
+
+            //베스트아이템카테고리
+            $('.clothes').css("color", "#000");
+            $('#best_clothes').show();
+            $('#best_man').hide();
+            $('#best_women').hide();
+
+            $('.man').click(function() {
+                $('.clothes').css("color", "#ccc");
+                $('.man').css("color", "#000");
+                $('.women').css("color", "#ccc");
+                $('#best_clothes').hide();
+                $('#best_man').show();
+                $('#best_women').hide();
+                return false;
+            });
+
+            $('.women').click(function() {
+                $('.clothes').css("color", "#ccc");
+                $('.man').css("color", "#ccc");
+                $('.women').css("color", "#000");
+                $('#best_clothes').hide();
+                $('#best_man').hide();
+                $('#best_women').show();
+                return false;
+            });
+
+            $('.clothes').click(function() {
+                $('.clothes').css("color", "#000");
+                $('.man').css("color", "#ccc");
+                $('.women').css("color", "#ccc");
+                $('#best_clothes').show();
+                $('#best_man').hide();
+                $('#best_women').hide();
+                return false;
+            });
+
+
+            //베스트아이템슬릭
+            $('.autoplay').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+            });
+
+
+        });
+
+
+        $(window).on('load', function() {
+            slider();
+        })
+
+        function slider() {
+            let swiper = undefined;
+            let slideNum = $('.slider .swiper-slide').length //슬라이드 총 개수
+            let slideInx = 0; //현재 슬라이드 index
+
+            //디바이스 체크
+            let oldWChk = window.innerWidth > 767 ? 'pc' : 'mo';
+            sliderAct();
+
+            let resizeTimer;
+            $(window).on('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    let newWChk = window.innerWidth > 767 ? 'pc' : 'mo';
+                    if (newWChk != oldWChk) {
+                        oldWChk = newWChk;
+                        sliderAct();
+                    }
+                }, 300);
+            })
+
+            //슬라이드 실행
+            function sliderAct() {
+                //슬라이드 초기화 
+                if (swiper != undefined) {
+                    swiper.destroy();
+                    swiper = undefined;
+                }
+
+                //slidesPerView 옵션 설정
+                let viewNum = oldWChk == 'pc' ? 4 : 2;
+                //loop 옵션 체크
+                let loopChk = slideNum > viewNum;
+
+                swiper = new Swiper(".slider .inner", {
+                    slidesPerView: "auto",
+                    initialSlide: slideInx,
+                    loop: loopChk,
+                    centeredSlides: true,
+                    navigation: {
+                        nextEl: '.slider .btn_next',
+                        prevEl: '.slider .btn_prev',
+                    },
+                    on: {
+                        activeIndexChange: function() {
+                            slideInx = this.realIndex; //현재 슬라이드 index 갱신
+                        }
+                    },
+                });
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo">
+            <a href="index.html"><img src="images/logo.png"></a>
+        </div>
+
+        <div id="category">
+            <ul class="menu">
+                <li><a href="#">남성</a></li>
+                <li><a href="#">여성</a></li>
+                <li><a href="#">아울렛</a></li>
+                <li><a href="#">스포츠</a></li>
+                <li><a href="#">이벤트</a></li>
+            </ul>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </div>
+
+    <div id="banner">
+        <img src="images/banner.jpg">
+    </div>
+
+    <div class="empty"></div>
+
+    <div id="best">
+        <div id="weekly">WEEKLY BEST</div>
+        <div id="best_category">
+            <ul id="best_menu">
+                <li class="clothes">의류</li>
+                <li class="man">남성</li>
+                <li class="women">여성</li>
+                <li id="all">전체보기</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="best_clothes">
+        <div class="autoplay">
+            <div class="best_item">
+                <img src="images/clothes/1.jpg">
+                <br>
+                <p class="item_name">우먼 매치 드레스</p>
+                <br>
+                <p class="price">125,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/clothes/2.jpg">
+                <br>
+                <p class="item_name">짐 니트 자켓</p>
+                <br>
+                <p class="price">119,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/clothes/3.jpg">
+                <br>
+                <p class="item_name">퍼포먼스 반팔 라운드</p>
+                <br>
+                <p class="price">39,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/clothes/4.jpg">
+                <br>
+                <p class="item_name">맨 매치 7IN 쇼츠</p>
+                <br>
+                <p class="price">99,000원</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="best_man">
+        <div class="autoplay">
+            <div class="best_item">
+                <img src="images/man/1.jpg">
+                <br>
+                <p class="item_name">GT 2160 IKEBANA</p>
+                <br>
+                <p class="price">159,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/man/2.jpg">
+                <br>
+                <p class="item_name">젤 카야노 30</p>
+                <br>
+                <p class="price">189,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/man/3.jpg">
+                <br>
+                <p class="item_name">젤 레졸루션 9 보스</p>
+                <br>
+                <p class="price">179,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/man/4.jpg">
+                <br>
+                <p class="item_name">젤 벤쳐 9(4E)</p>
+                <br>
+                <p class="price">89,000원</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="best_women">
+        <div class="autoplay">
+            <div class="best_item">
+                <img src="images/women/1.jpg">
+                <br>
+                <p class="item_name">젤 레졸루션 9 우먼</p>
+                <br>
+                <p class="price">159,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/women/2.jpg">
+                <br>
+                <p class="item_name">젤 카야노 30 우먼</p>
+                <br>
+                <p class="price">189,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/women/3.jpg">
+                <br>
+                <p class="item_name">넷버너 발리스틱 FF MT 3 우먼</p>
+                <br>
+                <p class="price">159,000원</p>
+            </div>
+            <div class="best_item">
+                <img src="images/women/4.jpg">
+                <br>
+                <p class="item_name">GT 2160 NS</p>
+                <br>
+                <p class="price">169,000원</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="empty"></div>
+    
+    <div class="title">CAMPAIGN</div>
+    <div id="campaign">
+        <div id="campaign_1"><img src="images/campaign/bigworld.jpg"></div>
+        <div id="campaign_2"><img src="images/campaign/performance.jpg"></div>
+        <div id="campaign_3"><img src="images/campaign/WIM.jpg"></div>
+    </div>
+
+    <div class="empty"></div>
+
+    <div class="title">NEWS & EVENT</div>
+
+    <div class="slider">
+        <div class="inner">
+            <ul class="swiper-wrapper slide_list">
+                <li class="swiper-slide"><img src="images/events/metaspeed.jpg"></li>
+                <li class="swiper-slide"><img src="images/events/always.jpg"></li>
+                <li class="swiper-slide"><img src="images/events/footId.jpg"></li>
+                <li class="swiper-slide"><img src="images/events/COSC.jpg"></li>
+                <li class="swiper-slide"><img src="images/events/about.jpg"></li>
+            </ul>
+        </div>
+        <span class="btn btn_prev">이전</span>
+        <span class="btn btn_next">다음</span>
+    </div>
+    
+    <div class="empty"></div>
+    
+    <div id="membership"><img src="images/membership.jpg"></div>
+    
+    
+    <div id="footer">
+        ©2024 STAX. All rights Reserved.
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
